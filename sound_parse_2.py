@@ -1,7 +1,29 @@
-from scipy.io.wavfile import read,write
+from scipy.io.wavfile import read
 import matplotlib.pyplot as plt
-import math
 from numpy import mean
+fs, data = read('B2B-1.wav')
+data_size = len(data)
+print(data_size)
+print(fs)
+index = 0
+while index < len(data):
+    if index%(fs*30)==0:
+        print("30 seconds")
+    value = data[index][0]
+    if value > 1600 and value < 2400:
+        test = data[index:index+170]
+        resp = is_ding(test)
+        if resp >=16 and resp <=17:
+            print(index//fs,"--- possible ding")
+            index += fs*3
+    
+    
+#print(data[:100])
+#plt.plot(data2[fs:fs*2])
+#plt.ylabel("Amplitude")
+#plt.xlabel("Time")
+#plt.title("WavGraph")
+#plt.show()
 
 def is_ding(data):
     if len(data) > 170:
@@ -26,28 +48,3 @@ def is_ding(data):
     cycles = cycles[1:]
     cycles = mean(cycles)
     return cycles
-fs, data = read('B2B-1.wav')
-second = 115
-length = 0.3
-#length = 0.11 #101
-segment = data[fs*second:math.floor(fs*(second+length))]
-print('starting')
-write('testding.wav',fs,segment)
-#print(segment[:100])
-print('done')
-if segment in data:
-    print("true")
-else:
-    print("false")
-hold = -10000000
-count = 0
-begin = False
-print(is_ding(segment))
-
-plt.plot(segment)
-plt.ylabel("Amplitude")
-plt.xlabel("Time")
-title = "WavGraph"+ str(second)
-plt.title(title)
-plt.show()
-
