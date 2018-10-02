@@ -27,8 +27,8 @@ def is_ding(data):
     cycles = mean(cycles)
     return cycles
 fs, data = read('B2B-1.wav')
-second = 115
-length = 0.3
+second = 1115
+length = 1.7
 #length = 0.11 #101
 segment = data[fs*second:math.floor(fs*(second+length))]
 print('starting')
