@@ -1,6 +1,31 @@
+83s - confirmed
 101s -confirmed
 115s -confirmed
 179s -confirmed
 357s -confirmed
 397s- confirmed
 455s - confirmed
+1183s - confirmed
+1195s - confirmed
+1245s - confirmed
+1271s - confirmed
+1381s - confirmed
+1406s - confirmed
+1417s - confirmed
+1464s - false found
+1521s - confirmed
+1534s - confirmed
+1696s - false found
+1816s - confirmed
+1961 - false found
+2031s - false found
+2047 - confirmed
+2324 - false found
+2471 - false found 
+2610 - false found 
+3181 - confirmed
+3279 - confirmed
+3297 - confirmed
+3525 - confirmed
+3640 - confirmed
+4248 - confirmed

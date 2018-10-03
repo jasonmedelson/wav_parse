@@ -39,12 +39,13 @@ while index < len(data):
     if index%int(fs*30)==0:
         print("30 seconds", index//fs)
     value = data[index][0]
-    test = data[index:index+551]
-    resp, arr, percent = is_ding(test)
-    if resp >=16 and resp <=17:
-        if percent > 0.82:
-            print(index//fs,"--- possible ding", percent,value)
-            index += fs*3
+    if value > 0:
+        test = data[index:index+3551]
+        resp, arr, percent = is_ding(test)
+        if resp >=16 and resp <=17:
+            if percent > 0.52:
+                print(index//fs,"--- possible ding", percent,arr)
+                index += fs*3
     index +=100    
     
 #print(data[:100])
